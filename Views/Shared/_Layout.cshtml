@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/Style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" _msthash="728000" _msttexthash="1183130">Карусель</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" _msthidden="A" _msthiddenattr="672295" _mstaria-label="320099">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" _msthash="641225" _msttexthash="474136">Дома</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" _msthash="641615" _msttexthash="803738">Ссылку</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" _msthash="642005" _msttexthash="1184547">Отключен</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск" _mstplaceholder="631605" _mstaria-label="631605">
+                    <button class="btn btn-outline-success" type="submit" _msthash="800449" _msttexthash="631605">Поиск</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <!--место куда встраиваются различные блоки,
+        сует представление List используя СarsList...
+        передавая через CarsController в методе там где возвращается View-->
+        @RenderBody()
+    </div>
+    <footer class="container">
+        <p class="float-end"><a href="#" _msthash="564148" _msttexthash="2105181">Назад к началу</a></p>
+        <p _msthash="564564" _msttexthash="13117052">© 2017-2021 г., Inc. <a href="#" _istranslated="1">Конфиденциальность</a> <a href="#" _istranslated="1">Условия</a></p>
+    </footer>
+    <script scr="~/js/bootstrap.min.js"></script>
+</body>
+</html>

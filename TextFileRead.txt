@@ -1,0 +1,2 @@
+﻿dowlound StaticFiles mvc
+Bootstrap закачка jpg css, выбор кода стилей
