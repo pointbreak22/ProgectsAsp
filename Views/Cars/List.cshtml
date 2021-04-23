@@ -2,14 +2,9 @@
 <h2>@Model.cuurCategory</h2>
 <div class="row mt-5 mb-2">
     @{
-        foreach (var car in Model.AllCars) //глобальный обьект который передается через представление в контроллере viewModels
+        foreach (Car car in Model.AllCars) //глобальный обьект который передается через представление в контроллере viewModels
         {
-            <div class="col-lg-3">
-                <img class="img-thumbnail" scr="@car.Img" alt="@car.Name" />
-                <h2> Модель: @car.Name   </h2>
-                <p>Цена:@car.Prise.ToString("c")</p>
-                <p><a class="btn btn-warning" href="#">Подробнее</a> </p>
-            </div>
+            @Html.Partial("AllCars", car)
         }
     }
 </div>

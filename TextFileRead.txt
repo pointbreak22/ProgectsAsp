@@ -1,2 +1,12 @@
 ﻿dowlound StaticFiles mvc
 Bootstrap закачка jpg css, выбор кода стилей
+
+для обновления сначало миграция Add-Migration ....
+Update-database
+
+библиотека AspNetCore.Session
+Microsoft.Extensions.Caching.Memory
+Microsoft.AspNetCore.Http.Extensions
+
+taghelper дополнительные атрибуты
+будстрап для html

@@ -16,34 +16,24 @@ namespace Shop.Data.Mocks
             get
             {
                 return new List<Car> {
-                    //new Car
-                    //{
-                    //    Name="Tesla",
-                    //    ShortDesc="Быстрый",
-                    //    LongDesc="красивый",
-                    //    Img="/img/s1200.jpg",
-                    //    Prise=4500,
-                    //    IsFavourite=true,
-                    //    Available=true,
-                    //    Category=_categoryCars.AllCategories.First()
-                    //},
-                    //new Car
-                    //{
-                    //    Name="Tesla",
-                    //    ShortDesc="Быстрый",
-                    //    LongDesc="красивый",
-                    //    Img="/img/s1200.jpg",
-                    //    Prise=4500,
-                    //    IsFavourite=true,
-                    //    Available=true,
-                    //    Category=_categoryCars.AllCategories.First()
-                    //},
                     new Car
                     {
                         Name="Tesla",
                         ShortDesc="Быстрый",
                         LongDesc="красивый",
-                        Img="~/img/mycar.jpg",
+                          Imgs = "/images/s1200.jpg",
+                        Prise=4500,
+                        IsFavourite=true,
+                        Available=true,
+                        Category=_categoryCars.AllCategories.First()
+                    },
+
+                    new Car
+                    {
+                        Name="Tesla",
+                        ShortDesc="Быстрый",
+                        LongDesc="красивый",
+                        Imgs = "/images/i.webp",
                         Prise=4500,
                         IsFavourite=true,
                         Available=true,

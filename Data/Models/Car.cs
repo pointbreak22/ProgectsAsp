@@ -11,7 +11,7 @@ namespace Shop.Data.Models
         public string Name { get; set; }
         public string ShortDesc { get; set; }
         public string LongDesc { get; set; }
-        public string Img { get; set; }
+        public string Imgs { get; set; }
         public ushort Prise { get; set; }
         public bool IsFavourite { get; set; }
         public bool Available { get; set; }
