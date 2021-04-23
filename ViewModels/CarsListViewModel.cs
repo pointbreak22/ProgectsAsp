@@ -9,6 +9,6 @@ namespace Shop.ViewModels
     public class CarsListViewModel
     {
         public IEnumerable<Car> AllCars { get; set; }
-        public string cuurCategory { get; set; }
+        public string CuurCategory { get; set; }
     }
 }

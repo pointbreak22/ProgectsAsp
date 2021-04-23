@@ -9,7 +9,7 @@ namespace Shop.Data.Mocks
 {
     public class MockCars : IAllCars
     {
-        private ICarsCategory _categoryCars = new MockCategory();
+        private readonly ICarsCategory _categoryCars = new MockCategory();
 
         public IEnumerable<Car> Cars
         {
@@ -43,9 +43,9 @@ namespace Shop.Data.Mocks
             }
         }
 
-        public IEnumerable<Car> getFavCars { get; set; }
+        public IEnumerable<Car> GetFavCars { get; set; }
 
-        public Car getJbjectCar(int carID)
+        public Car GetObjectCar(int CarID)
         {
             throw new NotImplementedException();
         }

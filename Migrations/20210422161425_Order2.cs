@@ -31,7 +31,7 @@ namespace Shop.Migrations
                 newName: "IX_OrderDetails_OrderId");
 
             migrationBuilder.AlterColumn<string>(
-                name: "surname",
+                name: "Surname",
                 table: "Orders",
                 type: "nvarchar(5)",
                 maxLength: 5,
@@ -42,7 +42,7 @@ namespace Shop.Migrations
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(
-                name: "phone",
+                name: "Phone",
                 table: "Orders",
                 type: "nvarchar(15)",
                 maxLength: 15,
@@ -64,7 +64,7 @@ namespace Shop.Migrations
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(
-                name: "adress",
+                name: "Adress",
                 table: "Orders",
                 type: "nvarchar(5)",
                 maxLength: 5,
@@ -110,7 +110,7 @@ namespace Shop.Migrations
                 newName: "IX_OrderDetails_orderId");
 
             migrationBuilder.AlterColumn<string>(
-                name: "surname",
+                name: "Surname",
                 table: "Orders",
                 type: "nvarchar(max)",
                 nullable: true,
@@ -119,7 +119,7 @@ namespace Shop.Migrations
                 oldMaxLength: 5);
 
             migrationBuilder.AlterColumn<string>(
-                name: "phone",
+                name: "Phone",
                 table: "Orders",
                 type: "nvarchar(max)",
                 nullable: true,
@@ -137,7 +137,7 @@ namespace Shop.Migrations
                 oldMaxLength: 5);
 
             migrationBuilder.AlterColumn<string>(
-                name: "adress",
+                name: "Adress",
                 table: "Orders",
                 type: "nvarchar(max)",
                 nullable: true,

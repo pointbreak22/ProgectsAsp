@@ -20,10 +20,10 @@ namespace Shop
 {
     public class Startup
     {
-        private IConfigurationRoot _confstring;
+        private readonly IConfigurationRoot _confstring;
 
         //получение подключения из файла
-        [Obsolete]
+        [Obsolete("This method is obsolete. ", true)]
         public Startup(IHostingEnvironment hostEnv)
         {
             _confstring = new ConfigurationBuilder().SetBasePath(hostEnv.ContentRootPath).AddJsonFile("dbsettings.json").Build();
@@ -50,7 +50,7 @@ namespace Shop
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
             app.UseDeveloperExceptionPage(); //показывание ошибок в режиме дебага
             app.UseStatusCodePages();//показывает код страницы
@@ -65,34 +65,9 @@ namespace Shop
                }
             );
 
-            //app.UseCors();
-
-            using (var score = app.ApplicationServices.CreateScope())
-            {
-                AppDbContent content = score.ServiceProvider.GetRequiredService<AppDbContent>();
-                DBObjects.Initial(content);
-            }
-            //;
-
-            //if (env.IsDevelopment())                     //Production
-            //{
-            //}
-
-            ////первый способ
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Hello World!");
-            //}
-            //);
-
-            ////второй способ
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapGet("/", async context =>
-            //    {
-            //        await context.Response.WriteAsync("Hello World!");
-            //    });
-            //});
+            using IServiceScope score = app.ApplicationServices.CreateScope();
+            AppDbContent content = score.ServiceProvider.GetRequiredService<AppDbContent>();
+            DBObjects.Initial(content);
         }
     }
 }

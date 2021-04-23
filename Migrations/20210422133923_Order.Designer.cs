@@ -84,22 +84,22 @@ namespace Shop.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("adress")
+                    b.Property<string>("Adress")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("email")
+                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("name")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("olderTime")
+                    b.Property<DateTime>("OlderTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("phone")
+                    b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("surname")
+                    b.Property<string>("SurName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
@@ -117,16 +117,16 @@ namespace Shop.Migrations
                     b.Property<int>("CarId")
                         .HasColumnType("int");
 
-                    b.Property<string>("email")
+                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("orderId")
                         .HasColumnType("int");
 
-                    b.Property<string>("phone")
+                    b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("price")
+                    b.Property<long>("Price")
                         .HasColumnType("bigint");
 
                     b.HasKey("id");
@@ -148,15 +148,15 @@ namespace Shop.Migrations
                     b.Property<string>("ShopCarId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("carId")
+                    b.Property<int?>("CarId")
                         .HasColumnType("int");
 
-                    b.Property<int>("price")
+                    b.Property<int>("Price")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("carId");
+                    b.HasIndex("CarId");
 
                     b.ToTable("ShopCarItem");
                 });
@@ -193,11 +193,11 @@ namespace Shop.Migrations
 
             modelBuilder.Entity("Shop.Data.Models.ShopCarItem", b =>
                 {
-                    b.HasOne("Shop.Data.Models.Car", "car")
+                    b.HasOne("Shop.Data.Models.Car", "Car")
                         .WithMany()
-                        .HasForeignKey("carId");
+                        .HasForeignKey("CarId");
 
-                    b.Navigation("car");
+                    b.Navigation("Car");
                 });
 
             modelBuilder.Entity("Shop.Data.Models.Category", b =>

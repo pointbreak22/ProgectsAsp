@@ -87,15 +87,15 @@ namespace Shop.Migrations
                     b.Property<string>("ShopCarId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("carId")
+                    b.Property<int?>("CarId")
                         .HasColumnType("int");
 
-                    b.Property<int>("price")
+                    b.Property<int>("Price")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("carId");
+                    b.HasIndex("CarId");
 
                     b.ToTable("ShopCarItem");
                 });
@@ -113,11 +113,11 @@ namespace Shop.Migrations
 
             modelBuilder.Entity("Shop.Data.Models.ShopCarItem", b =>
                 {
-                    b.HasOne("Shop.Data.Models.Car", "car")
+                    b.HasOne("Shop.Data.Models.Car", "Car")
                         .WithMany()
-                        .HasForeignKey("carId");
+                        .HasForeignKey("CarId");
 
-                    b.Navigation("car");
+                    b.Navigation("Car");
                 });
 
             modelBuilder.Entity("Shop.Data.Models.Category", b =>

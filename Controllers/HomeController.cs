@@ -11,26 +11,26 @@ namespace Shop.Controllers
 {
     public class HomeController : Controller
     {
-        private IAllCars _carrep;
+        private readonly IAllCars _Carrep;
 
-        public HomeController(IAllCars carrep)
+        public HomeController(IAllCars Carrep)
         {
-            _carrep = carrep;
+            _Carrep = Carrep;
         }
 
         // GET: HomeController
         public ViewResult Index()
         {
-            var homecars = new HomeViewModel
+            var homeCars = new HomeViewModel
             {
-                favCars = _carrep.getFavCars
+                FavCars = _Carrep.GetFavCars
             };
 
-            return View(homecars);
+            return View(homeCars);
         }
 
         // GET: HomeController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
             return View();
         }
@@ -58,7 +58,7 @@ namespace Shop.Controllers
         }
 
         // GET: HomeController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit()
         {
             return View();
         }
@@ -79,7 +79,7 @@ namespace Shop.Controllers
         }
 
         // GET: HomeController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete()
         {
             return View();
         }

@@ -8,6 +8,6 @@ namespace Shop.Data.Interfaces
 {
     public interface IAllAlders
     {
-        void createOrder(Order order);
+        void CreateOrder(Order order);
     }
 }

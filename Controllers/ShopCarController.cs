@@ -12,18 +12,18 @@ namespace Shop.Controllers
 {
     public class ShopCarController : Controller
     {
-        private IAllCars _carrep;
+        private readonly IAllCars _Carrep;
         private readonly ShopCar _shopCar;
 
-        public ShopCarController(IAllCars carrep, ShopCar shopCar)
+        public ShopCarController(IAllCars Carrep, ShopCar shopCar)
         {
-            _carrep = carrep; _shopCar = shopCar;
+            _Carrep = Carrep; _shopCar = shopCar;
         }
 
         public ViewResult Index()
         {
             var items = _shopCar.GetShopItems();
-            _shopCar.listShopItems = items;
+            _shopCar.ListShopItems = items;
 
             var obj = new ShopCarViewModel
             {
@@ -32,9 +32,9 @@ namespace Shop.Controllers
             return View(obj);
         }
 
-        public RedirectToActionResult addToCar(int id)
+        public RedirectToActionResult AddToCar(int id)
         {
-            var item = _carrep.Cars.FirstOrDefault(i => i.Id == id);
+            var item = _Carrep.Cars.FirstOrDefault(i => i.Id == id);
             if (item != null)
             {
                 _shopCar.AddToCar(item);

@@ -12,7 +12,7 @@ namespace Shop.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Categoryname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Desk = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -26,7 +26,7 @@ namespace Shop.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ShortDesc = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LongDesc = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Imgs = table.Column<string>(type: "nvarchar(max)", nullable: true),

@@ -18,20 +18,20 @@ namespace Shop.Data.Repository
             this.shopCar = shopCar;
         }
 
-        public void createOrder(Order order)
+        public void CreateOrder(Order order)
         {
-            order.olderTime = DateTime.Now;
+            order.OlderTime = DateTime.Now;
             appDbContent.Orders.Add(order);
             appDbContent.SaveChanges();
-            var items = shopCar.listShopItems;
+            var items = shopCar.ListShopItems;
 
             foreach (var el in items)
             {
                 var orderDetail = new OrderDetail()
                 {
-                    CarId = el.car.Id,
+                    CarId = el.Car.Id,
                     OrderId = order.Id,
-                    price = el.car.Prise
+                    Price = el.Car.Prise
                 };
                 appDbContent.OrderDetails.Add(orderDetail);
             }

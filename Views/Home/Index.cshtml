@@ -1,11 +1,12 @@
 ﻿@model HomeViewModel
 
-    <h1>Лучшие автомобили</h1>
-    <div class="row mt-5 mb-2">
-        @{
-            foreach (Car car in Model.favCars) //глобальный обьект который передается через представление в контроллере viewModels
-            {
-                @Html.Partial("AllCars", car)
-            }
+<h1>Лучшие автомобили</h1>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (Car Car in Model.FavCars) //глобальный обьект который передается через представление в контроллере viewModels
+        {
+            // @Html.Partial("AllCars", Car)
+            <partial name="AllCars" for="@Car" />
         }
-    </div>
+    }
+</div>

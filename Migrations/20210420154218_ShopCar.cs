@@ -12,25 +12,25 @@ namespace Shop.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    carId = table.Column<int>(type: "int", nullable: true),
-                    price = table.Column<int>(type: "int", nullable: false),
+                    CarId = table.Column<int>(type: "int", nullable: true),
+                    Price = table.Column<int>(type: "int", nullable: false),
                     ShopCarId = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ShopCarItem", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ShopCarItem_Car_carId",
-                        column: x => x.carId,
+                        name: "FK_ShopCarItem_Car_CarId",
+                        column: x => x.CarId,
                         principalTable: "Car",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ShopCarItem_carId",
+                name: "IX_ShopCarItem_CarId",
                 table: "ShopCarItem",
-                column: "carId");
+                column: "CarId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

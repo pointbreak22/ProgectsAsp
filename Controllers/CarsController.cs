@@ -14,9 +14,9 @@ namespace Shop.Controllers
         private readonly IAllCars _allCars;
         private readonly ICarsCategory _allCategories;
 
-        public CarsController(IAllCars allCars, ICarsCategory carsCategory)
+        public CarsController(IAllCars allCars, ICarsCategory CarsCategory)
         {
-            _allCars = allCars; _allCategories = carsCategory;
+            _allCars = allCars; _allCategories = CarsCategory;
         }
 
         [Route("Cars/List")]
@@ -24,38 +24,33 @@ namespace Shop.Controllers
         public ViewResult List(string category)
         {
             string _category = category;
-            IEnumerable<Car> cars = null;
+            IEnumerable<Car> Cars = null;
             string curtCategory = "";
             if (string.IsNullOrEmpty(_category))
             {
-                cars = _allCars.Cars.OrderBy(i => i.Id);
+                Cars = _allCars.Cars.OrderBy(i => i.Id);
             }
             else
             {
                 if (string.Equals("electro", _category, StringComparison.OrdinalIgnoreCase))
                 {
-                    cars = _allCars.Cars.Where(i => i.Category.CategoryName.Equals("Электромобили")).OrderBy(i => i.Id);
+                    Cars = _allCars.Cars.Where(i => i.Category.CategoryName.Equals("Электромобили")).OrderBy(i => i.Id);
                     curtCategory = "Электромобили";
                 }
                 else if (string.Equals("fuel", _category, StringComparison.OrdinalIgnoreCase))
                 {
-                    cars = _allCars.Cars.Where(i => i.Category.CategoryName.Equals("Класические автомобили")).OrderBy(i => i.Id);
+                    Cars = _allCars.Cars.Where(i => i.Category.CategoryName.Equals("Класические автомобили")).OrderBy(i => i.Id);
                     curtCategory = "Класические автомобили";
                 }
             }
-            var carObj = new CarsListViewModel
+            var CarObj = new CarsListViewModel
             {
-                AllCars = cars,
-                cuurCategory = curtCategory
+                AllCars = Cars,
+                CuurCategory = curtCategory
             };
             ViewBag.Title = "Страница с автомобилями";
 
-            return View(carObj);                //возвращение представления
+            return View(CarObj);                //возвращение представления
         }
-
-        //    public IActionResult Index()
-        //    {
-        //        return View();
-        //    }
     }
 }

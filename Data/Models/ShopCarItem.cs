@@ -8,8 +8,8 @@ namespace Shop.Data.Models
     public class ShopCarItem
     {
         public int Id { get; set; }
-        public Car car { get; set; }
-        public int price { get; set; }
+        public Car Car { get; set; }
+        public int Price { get; set; }
         public string ShopCarId { get; set; }
     }
 }

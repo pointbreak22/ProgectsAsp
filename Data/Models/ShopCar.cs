@@ -18,7 +18,7 @@ namespace Shop.Data.Models
         }
 
         public string ShopCarId { get; set; }
-        public List<ShopCarItem> listShopItems { get; set; }
+        public List<ShopCarItem> ListShopItems { get; set; }
 
         public static ShopCar GetCar(IServiceProvider service)
         {
@@ -30,20 +30,20 @@ namespace Shop.Data.Models
             return new ShopCar(context) { ShopCarId = shopCarId };
         }
 
-        public void AddToCar(Car car)
+        public void AddToCar(Car Car)
         {
             this.appDbContent.ShopCarItem.Add(new ShopCarItem
             {
                 ShopCarId = ShopCarId,
-                car = car,
-                price = car.Prise
+                Car = Car,
+                Price = Car.Prise
             });
             appDbContent.SaveChanges();
         }
 
         public List<ShopCarItem> GetShopItems()
         {
-            return appDbContent.ShopCarItem.Where(c => c.ShopCarId == ShopCarId).Include(s => s.car).ToList();
+            return appDbContent.ShopCarItem.Where(c => c.ShopCarId == ShopCarId).Include(s => s.Car).ToList();
         }
     }
 }

@@ -27,15 +27,15 @@ namespace Shop.Controllers
         [HttpPost]
         public IActionResult CheckOut(Order order)     //отлавливает Post обьекта
         {
-            shopCar.listShopItems = shopCar.GetShopItems();
-            if (shopCar.listShopItems.Count == 0)
+            shopCar.ListShopItems = shopCar.GetShopItems();
+            if (shopCar.ListShopItems.Count == 0)
             {
                 ModelState.AddModelError("", "У вас должны быть товары");
             }
 
             if (ModelState.IsValid)  //проверка модели на валидацию
             {
-                allorder.createOrder(order);
+                allorder.CreateOrder(order);
                 return RedirectToAction("Complete");
             }
             return View(order);

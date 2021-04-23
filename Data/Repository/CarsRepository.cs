@@ -19,8 +19,8 @@ namespace Shop.Data.Repository
 
         public IEnumerable<Car> Cars => appDbContent.Car.Include(c => c.Category);
 
-        public IEnumerable<Car> getFavCars => appDbContent.Car.Where(p => p.IsFavourite).Include(c => c.Category);
+        public IEnumerable<Car> GetFavCars => appDbContent.Car.Where(p => p.IsFavourite).Include(c => c.Category);
 
-        public Car getJbjectCar(int carID) => appDbContent.Car.FirstOrDefault(p => p.Id == carID);
+        public Car GetObjectCar(int CarID) => appDbContent.Car.FirstOrDefault(p => p.Id == CarID);
     }
 }
