@@ -1,5 +1,5 @@
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=DESKTOP-RU00IQF\\SQLEXPRESS;Database=Shop;Trusted_Connection=True;MultipleActiveResultSets=true"
+    "DefaultConnection": "Server=.\\SQLEXPRESS;Database=Shop;Trusted_Connection=True;MultipleActiveResultSets=true"
   }
 }

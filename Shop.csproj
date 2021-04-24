@@ -12,6 +12,8 @@
     <None Remove="img\**" />
   </ItemGroup>
 
+ 
+
   <ItemGroup>
     <PackageReference Include="Json.Net" Version="1.0.25" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
