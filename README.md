@@ -1,2 +1,2 @@
 Резервная копия MS SQL
-https://yadi.sk/d/I1gAOJvecJwquA
+https://disk.yandex.com/d/c9I6Gv-Nybx43A
